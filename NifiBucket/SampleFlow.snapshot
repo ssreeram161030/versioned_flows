@@ -1,0 +1,445 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "5 GB",
+          "backPressureObjectThreshold" : 10000000,
+          "bends" : [ {
+            "x" : 1024.990234375,
+            "y" : 812.1233978271484
+          } ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "a4c1d752-5b6e-3def-ad12-e3d07b9b3c56",
+            "name" : "LogAttribute",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "e41adbea-894d-340d-b4a6-bb2038514398",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "failure", "retry" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "7bb710df-e36c-3e9c-b0db-659c05d8aef0",
+            "name" : "PutElasticsearchHttp",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "5 GB",
+          "backPressureObjectThreshold" : 10000000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "a4c1d752-5b6e-3def-ad12-e3d07b9b3c56",
+            "name" : "LogAttribute",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "d212d62f-1c4a-34e7-b1ee-d4331127c457",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "7bb710df-e36c-3e9c-b0db-659c05d8aef0",
+            "name" : "PutElasticsearchHttp",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "5 GB",
+          "backPressureObjectThreshold" : 10000000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "7bb710df-e36c-3e9c-b0db-659c05d8aef0",
+            "name" : "PutElasticsearchHttp",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "65e7e19c-b357-33cc-97a6-6e5d78a36cd6",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+            "id" : "832e1fda-9336-368f-bbe9-11ba9957900a",
+            "name" : "ConsumeKafka",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "SampleFlow",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 554.0,
+          "y" : 203.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.9.2"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 3,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "7bb710df-e36c-3e9c-b0db-659c05d8aef0",
+          "name" : "PutElasticsearchHttp",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 557.9652239768166,
+            "y" : 547.4322794917298
+          },
+          "properties" : {
+            "elasticsearch-http-response-timeout" : "15 secs",
+            "put-es-type" : "_doc",
+            "put-es-index" : "test",
+            "elasticsearch-http-url" : "http://a5eccb883d0c411e9b7500a44696d262-504107795.us-east-2.elb.amazonaws.com:9200",
+            "put-es-batch-size" : "10000",
+            "elasticsearch-http-connect-timeout" : "30 secs",
+            "put-es-index-op" : "index",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "elasticsearch-http-response-timeout" : {
+              "displayName" : "Response Timeout",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-response-timeout",
+              "sensitive" : false
+            },
+            "put-es-id-attr" : {
+              "displayName" : "Identifier Attribute",
+              "identifiesControllerService" : false,
+              "name" : "put-es-id-attr",
+              "sensitive" : false
+            },
+            "put-es-type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "put-es-type",
+              "sensitive" : false
+            },
+            "put-es-index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "put-es-index",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "elasticsearch-http-url" : {
+              "displayName" : "Elasticsearch URL",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-url",
+              "sensitive" : false
+            },
+            "put-es-batch-size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "put-es-batch-size",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "elasticsearch-http-connect-timeout" : {
+              "displayName" : "Connection Timeout",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-connect-timeout",
+              "sensitive" : false
+            },
+            "Username" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "Username",
+              "sensitive" : false
+            },
+            "put-es-index-op" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "put-es-index-op",
+              "sensitive" : false
+            },
+            "elasticsearch-http-proxy-host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-proxy-host",
+              "sensitive" : false
+            },
+            "proxy-username" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-username",
+              "sensitive" : false
+            },
+            "proxy-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-password",
+              "sensitive" : false
+            },
+            "elasticsearch-http-proxy-port" : {
+              "displayName" : "Proxy Port",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-proxy-port",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchHttp",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.9.2"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "a4c1d752-5b6e-3def-ad12-e3d07b9b3c56",
+          "name" : "LogAttribute",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 557.8743657321368,
+            "y" : 948.2775945836008
+          },
+          "properties" : {
+            "character-set" : "UTF-8",
+            "Log Level" : "info",
+            "attributes-to-log-regex" : ".*",
+            "Log Payload" : "false"
+          },
+          "propertyDescriptors" : {
+            "Log prefix" : {
+              "displayName" : "Log prefix",
+              "identifiesControllerService" : false,
+              "name" : "Log prefix",
+              "sensitive" : false
+            },
+            "character-set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "character-set",
+              "sensitive" : false
+            },
+            "Log Level" : {
+              "displayName" : "Log Level",
+              "identifiesControllerService" : false,
+              "name" : "Log Level",
+              "sensitive" : false
+            },
+            "attributes-to-ignore-regex" : {
+              "displayName" : "Attributes to Ignore by Regular Expression",
+              "identifiesControllerService" : false,
+              "name" : "attributes-to-ignore-regex",
+              "sensitive" : false
+            },
+            "Attributes to Ignore" : {
+              "displayName" : "Attributes to Ignore",
+              "identifiesControllerService" : false,
+              "name" : "Attributes to Ignore",
+              "sensitive" : false
+            },
+            "Attributes to Log" : {
+              "displayName" : "Attributes to Log",
+              "identifiesControllerService" : false,
+              "name" : "Attributes to Log",
+              "sensitive" : false
+            },
+            "attributes-to-log-regex" : {
+              "displayName" : "Attributes to Log by Regular Expression",
+              "identifiesControllerService" : false,
+              "name" : "attributes-to-log-regex",
+              "sensitive" : false
+            },
+            "Log Payload" : {
+              "displayName" : "Log Payload",
+              "identifiesControllerService" : false,
+              "name" : "Log Payload",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.LogAttribute",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-kafka-0-9-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.9.2"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "1ac3b568-ae2e-3ff0-b53f-cfbb72da820d",
+          "identifier" : "832e1fda-9336-368f-bbe9-11ba9957900a",
+          "name" : "ConsumeKafka",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 554.0,
+            "y" : 203.0
+          },
+          "properties" : {
+            "security.protocol" : "PLAINTEXT",
+            "max.poll.records" : "10000",
+            "max-uncommit-offset-wait" : "1 secs",
+            "group.id" : "1",
+            "bootstrap.servers" : "hd0.nifims.aagsiriuscom.com:6667",
+            "topic" : "test",
+            "key-attribute-encoding" : "utf-8",
+            "auto.offset.reset" : "latest"
+          },
+          "propertyDescriptors" : {
+            "security.protocol" : {
+              "displayName" : "Security Protocol",
+              "identifiesControllerService" : false,
+              "name" : "security.protocol",
+              "sensitive" : false
+            },
+            "ssl.context.service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "ssl.context.service",
+              "sensitive" : false
+            },
+            "max.poll.records" : {
+              "displayName" : "Max Poll Records",
+              "identifiesControllerService" : false,
+              "name" : "max.poll.records",
+              "sensitive" : false
+            },
+            "max-uncommit-offset-wait" : {
+              "displayName" : "Max Uncommitted Time",
+              "identifiesControllerService" : false,
+              "name" : "max-uncommit-offset-wait",
+              "sensitive" : false
+            },
+            "group.id" : {
+              "displayName" : "Group ID",
+              "identifiesControllerService" : false,
+              "name" : "group.id",
+              "sensitive" : false
+            },
+            "bootstrap.servers" : {
+              "displayName" : "Kafka Brokers",
+              "identifiesControllerService" : false,
+              "name" : "bootstrap.servers",
+              "sensitive" : false
+            },
+            "topic" : {
+              "displayName" : "Topic Name(s)",
+              "identifiesControllerService" : false,
+              "name" : "topic",
+              "sensitive" : false
+            },
+            "message-demarcator" : {
+              "displayName" : "Message Demarcator",
+              "identifiesControllerService" : false,
+              "name" : "message-demarcator",
+              "sensitive" : false
+            },
+            "key-attribute-encoding" : {
+              "displayName" : "Key Attribute Encoding",
+              "identifiesControllerService" : false,
+              "name" : "key-attribute-encoding",
+              "sensitive" : false
+            },
+            "auto.offset.reset" : {
+              "displayName" : "Offset Reset",
+              "identifiesControllerService" : false,
+              "name" : "auto.offset.reset",
+              "sensitive" : false
+            },
+            "sasl.kerberos.service.name" : {
+              "displayName" : "Kerberos Service Name",
+              "identifiesControllerService" : false,
+              "name" : "sasl.kerberos.service.name",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.kafka.pubsub.ConsumeKafka",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      }
+    }
+  }
+}
